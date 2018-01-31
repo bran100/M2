@@ -1,12 +1,12 @@
 package edu.gatech.oad.antlab.person;
 
 /**
- *  A simple class for person 5
+ *  A simple class for person 6
  *  returns their name and a
  *  modified string 
  *  
- *  @author Bob
- *  @version 1.1
+ *  @author Samantha Mann
+ *  @version 1.2
  */
 public class Person6 {
   /** Holds the persons real name */
@@ -30,8 +30,24 @@ public class Person6 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 5 put your implementation here
-	  return null;
+	  //Person 6 put your implementation here
+		if (input != null) {
+			char[] temp = input.toCharArray();
+
+	    	for (int i = 0; i < 2; i++) { //complete shift two times
+	      		char first = temp[0]; //store first element to move to back of array
+
+	      		for (int j = 0; j < temp.length - 1; j++) {
+	        		temp[j] = temp[j + 1]; //shift array left by one
+	      		}
+
+	      		temp[temp.length - 1] = first; //put first element at back of the array
+	    	}
+
+	  		return String.valueOf(temp); //convert char array back to string
+		}
+
+		return null;
 	}
 	
 	/**
